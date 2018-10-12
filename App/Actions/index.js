@@ -59,16 +59,17 @@ export function loginFetch(email,password) {
             method:'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'X-Requested-With': '[{"key":"X-Requested-With","value":"XMLHttpRequest","enabled":true}]'
+                'Content-Type': 'application/json'
+                // 'X-Requested-With': '[{"key":"X-Requested-With","value":"XMLHttpRequest","enabled":true}]'
+                 // 'Accept': 'application/json',
+                 // 'Content-Type': 'application/json',
+                 // 'Access-Control-Allow-Headers':'*',
+                 // 'Access-Control-Allow-Origin' :'*',
+                 // 'X-Requested-With': 'XMLHttpRequest'
             },
             body: JSON.stringify({
-                grant_type:'password',
-                // client_id: OAUTH_CLIENT_ID,
-                // client_secret: OAUTH_CLIENT_SECRECT,
-                username:email,
-                password:password,
-                scope:''
+                email,
+                password
             })
         })
         .then(response => response.json())
